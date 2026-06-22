@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>양주종합주방 | 음식점 창업 주방기기 무료상담</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<style>
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+}
+
+:root{
+  --ink:#1C2B39;
+  --paper:#FAF7F2;
+  --hook:#E0432F;
+  --hook-deep:#C03522;
+  --steel:#4F6373;
+  --line:#E5DFD3;
+  --mono: 'IBM Plex Mono', 'Pretendard', monospace;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Pretendard', sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.55;
+  padding-bottom:72px; /* room for sticky bar */
+}
+img,svg{display:block; max-width:100%;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:560px; margin:0 auto; padding:0 24px;}
+
+/* ---------- mark / highlight ---------- */
+mark{
+  background:none;
+  color:var(--hook-deep);
+  font-weight:800;
+  position:relative;
+  white-space:nowrap;
+}
+
+/* ---------- top bar ---------- */
+.topbar{
+  background:var(--ink);
+  color:#fff;
+  text-align:center;
+  font-size:13px;
+  letter-spacing:.02em;
+  padding:8px 12px;
+}
+.topbar b{color:#FFD9CC;}
+
+/* ---------- hero ---------- */
+.hero{
+  padding:48px 0 40px;
+  text-align:center;
+}
+.eyebrow{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.08em;
+  color:var(--steel);
+  border:1px solid var(--steel);
+  border-radius:999px;
+  padding:5px 14px;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:30px;
+  font-weight:900;
+  line-height:1.4;
+  letter-spacing:-0.01em;
+}
+.hero h1 .danger{
+  background:linear-gradient(180deg, transparent 58%, #FBD0C4 58%);
+  color:var(--hook-deep);
+}
+.hero p.sub{
+  margin-top:16px;
+  font-size:16px;
+  color:var(--steel);
+  font-weight:500;
+}
+.hero p.sub b{color:var(--ink); font-weight:700;}
+
+.brand-card{
+  margin-top:28px;
+  background:#fff;
+  border:1.5px solid var(--ink);
+  border-radius:18px;
+  padding:26px 22px;
+  text-align:left;
+}
+.brand-card .brand-name{
+  font-size:13px;
+  font-weight:700;
+  color:var(--hook-deep);
+  margin-bottom:6px;
+}
+.brand-card h2{
+  font-size:19px;
+  font-weight:800;
+  line-height:1.45;
+  margin-bottom:14px;
+}
+.checks{list-style:none; display:flex; flex-direction:column; gap:9px;}
+.checks li{
+  display:flex; align-items:flex-start; gap:8px;
+  font-size:15px; font-weight:600;
+}
+.checks li::before{
+  content:"✓";
+  flex-shrink:0;
+  width:20px; height:20px;
+  border-radius:50%;
+  background:var(--hook);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+  margin-top:1px;
+}
+
+/* ---------- CTA buttons ---------- */
+.cta-btn{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  width:100%;
+  background:var(--hook);
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  border-radius:12px;
+  padding:17px 0;
+  margin-top:22px;
+  box-shadow:0 6px 18px rgba(224,67,47,0.32);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.cta-btn:active{transform:scale(.97);}
+.cta-btn .num{font-family:var(--mono); letter-spacing:.02em;}
+.cta-sub{
+  text-align:center;
+  font-size:12.5px;
+  color:var(--steel);
+  margin-top:10px;
+  font-weight:500;
+}
+
+/* ---------- section generic ---------- */
+section{padding:52px 0;}
+.divider{
+  border-top:1px dashed var(--line);
+}
+.section-tag{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:600;
+  color:var(--hook-deep);
+  letter-spacing:.06em;
+  margin-bottom:10px;
+  display:block;
+}
+h3.section-title{
+  font-size:23px;
+  font-weight:800;
+  line-height:1.4;
+  margin-bottom:8px;
+}
+.section-desc{
+  color:var(--steel);
+  font-size:15px;
+  font-weight:500;
+  margin-bottom:26px;
+}
+
+/* ---------- 고민 체크리스트 ---------- */
+.worry-list{list-style:none; display:flex; flex-direction:column; gap:12px;}
+.worry-list li{
+  display:flex; align-items:center; gap:12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px 16px;
+  font-size:15.5px;
+  font-weight:600;
+}
+.worry-list .box{
+  flex-shrink:0;
+  width:22px; height:22px;
+  border:2px solid var(--ink);
+  border-radius:5px;
+}
+.worry-result{
+  margin-top:20px;
+  background:var(--ink);
+  color:#fff;
+  border-radius:12px;
+  padding:18px 20px;
+  font-size:15px;
+  font-weight:700;
+  text-align:center;
+  line-height:1.5;
+}
+.worry-result span{color:#FFB199;}
+
+/* ---------- 왜 양주종합주방 ---------- */
+.why-list{display:flex; flex-direction:column;}
+.why-item{
+  display:flex; gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+.why-item:last-child{border-bottom:none;}
+.why-num{
+  font-family:var(--mono);
+  font-size:13px;
+  font-weight:700;
+  color:#fff;
+  background:var(--steel);
+  width:30px; height:30px;
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.why-text h4{
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:4px;
+}
+.why-text p{
+  font-size:14px;
+  color:var(--steel);
+  font-weight:500;
+}
+
+/* ---------- 상담 절차 ---------- */
+.steps{display:flex; flex-direction:column; gap:0;}
+.step{
+  display:flex; gap:16px; position:relative;
+  padding-bottom:30px;
+}
+.step:last-child{padding-bottom:0;}
+.step-marker{
+  display:flex; flex-direction:column; align-items:center;
+  flex-shrink:0;
+}
+.step-circle{
+  width:34px; height:34px;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--mono);
+  font-weight:700;
+  font-size:13px;
+  display:flex; align-items:center; justify-content:center;
+}
+.step:last-child .step-circle{background:var(--hook);}
+.step-line{
+  width:2px; flex:1;
+  background:var(--line);
+  margin-top:4px;
+}
+.step-body{padding-top:4px;}
+.step-body h4{font-size:16px; font-weight:800; margin-bottom:3px;}
+.step-body p{font-size:13.5px; color:var(--steel); font-weight:500;}
+
+/* ---------- 마무리 ---------- */
+.closing{
+  background:var(--ink);
+  color:#fff;
+  text-align:center;
+  padding:56px 0 48px;
+}
+.closing .line1{
+  font-size:18px;
+  font-weight:700;
+  color:#C9D4DA;
+}
+.closing .line2{
+  font-size:24px;
+  font-weight:900;
+  margin-top:6px;
+  margin-bottom:30px;
+}
+.closing .cta-btn{
+  background:var(--hook);
+  box-shadow:0 6px 22px rgba(224,67,47,0.45);
+}
+.closing .addr{
+  margin-top:28px;
+  font-size:13px;
+  color:#9FB0BA;
+  font-weight:500;
+  line-height:1.6;
+}
+.closing .addr b{color:#fff; display:block; font-size:14px; margin-bottom:3px;}
+
+/* ---------- sticky bottom bar ---------- */
+.sticky-bar{
+  position:fixed; left:0; right:0; bottom:0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  box-shadow:0 -6px 18px rgba(0,0,0,0.06);
+  padding:10px 16px;
+  z-index:50;
+}
+.sticky-bar .wrap{padding:0; max-width:560px;}
+.sticky-bar .cta-btn{margin-top:0; padding:14px 0; font-size:16px;}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1; transform:none; transition:none;}
+  .cta-btn{transition:none;}
+}
+
+@media (min-width:600px){
+  .hero h1{font-size:34px;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">지금 전화상담 시 <b>무료 실측 + 3D 도면설계</b> 바로 안내</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">음식점 창업 준비 중이라면</span>
+    <h1>주방기기 계약 전,<br>이것부터 <span class="danger">확인</span>하세요</h1>
+    <p class="sub">주방 설계를 한 번 잘못하면<br><b>영업 시작 후에도 매일 불편</b>하고,<br>잘못된 기기 선택은 <mark>수백만 원</mark>의<br>추가 비용으로 돌아옵니다.</p>
+
+    <div class="brand-card reveal">
+      <div class="brand-name">양주종합주방</div>
+      <h2>그냥 주방기기 판매업체가 아닙니다.<br><b>30년 경력 오픈매니저</b>가 직접 상담합니다.</h2>
+      <ul class="checks">
+        <li>무료 실측</li>
+        <li>3D 도면 설계</li>
+        <li>업종별 주방 동선 상담</li>
+        <li>예산에 맞는 장비 제안</li>
+      </ul>
+      <a href="tel:031-841-8259" class="cta-btn">☎ 무료 창업상담 <span class="num">031-841-8259</span></a>
+      <div class="cta-sub">전화 한 통이면 견적까지 끝까지 책임지고 안내드립니다</div>
+    </div>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<!-- 고민 체크리스트 -->
+<section>
+  <div class="wrap reveal">
+    <span class="section-tag">CHECK</span>
+    <h3 class="section-title">이런 고민이 있으신가요?</h3>
+    <p class="section-desc">하나라도 해당된다면, 지금 상담받는 게 답입니다.</p>
+    <ul class="worry-list">
+      <li><span class="box"></span>처음 창업이라 무엇부터 준비해야 할지 모르겠다</li>
+      <li><span class="box"></span>주방 공간이 좁아 동선이 걱정된다</li>
+      <li><span class="box"></span>신품과 중고 중 무엇이 유리한지 모르겠다</li>
+      <li><span class="box"></span>예산에 맞는 주방기기 구성이 필요하다</li>
+      <li><span class="box"></span>한 곳에서 모두 해결하고 싶다</li>
+    </ul>
+    <div class="worry-result">하나라도 체크하셨다면, <span>지금 바로 무료 상담</span>을 받아보세요.</div>
+    <a href="tel:031-841-8259" class="cta-btn">☎ 무료 상담 신청하기</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 왜 양주종합주방인가 -->
+<section>
+  <div class="wrap reveal">
+    <span class="section-tag">WHY US</span>
+    <h3 class="section-title">왜 양주종합주방인가?</h3>
+    <p class="section-desc">30년을 한 자리에서, 한 업종만 봐온 이유가 있습니다.</p>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-text"><h4>오픈매니저 30년 경력</h4><p>수백 곳의 매장을 직접 설계해 본 경험</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-text"><h4>무료 실측 + 3D 도면 설계</h4><p>눈으로 보고 결정할 수 있도록 미리 보여드립니다</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-text"><h4>업소용 주방기기 전문</h4><p>업종별 동선과 효율까지 고려한 장비 제안</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-text"><h4>주방용품 원스톱 구매</h4><p>여러 업체 비교할 필요 없이 한 곳에서 해결</p></div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">05</div>
+        <div class="why-text"><h4>신품·중고 모두 상담 가능</h4><p>예산에 맞춰 솔직하게 알려드립니다</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 상담 절차 -->
+<section>
+  <div class="wrap reveal">
+    <span class="section-tag">PROCESS</span>
+    <h3 class="section-title">상담 절차</h3>
+    <p class="section-desc">전화 한 통으로 시작해서, 설치까지 끝까지 함께합니다.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-marker"><div class="step-circle">1</div><div class="step-line"></div></div>
+        <div class="step-body"><h4>전화 상담</h4><p>지금 바로 031-841-8259로 문의주세요</p></div>
+      </div>
+      <div class="step">
+        <div class="step-marker"><div class="step-circle">2</div><div class="step-line"></div></div>
+        <div class="step-body"><h4>현장 실측</h4><p>매장에 방문해 정확한 치수를 측정합니다</p></div>
+      </div>
+      <div class="step">
+        <div class="step-marker"><div class="step-circle">3</div><div class="step-line"></div></div>
+        <div class="step-body"><h4>3D 도면 설계</h4><p>동선까지 고려한 주방 도면을 만들어 드립니다</p></div>
+      </div>
+      <div class="step">
+        <div class="step-marker"><div class="step-circle">4</div><div class="step-line"></div></div>
+        <div class="step-body"><h4>맞춤 견적</h4><p>예산에 맞는 장비 구성과 견적을 제안합니다</p></div>
+      </div>
+      <div class="step">
+        <div class="step-marker"><div class="step-circle">5</div></div>
+        <div class="step-body"><h4>납품 및 설치</h4><p>설치까지 마무리하고 영업 준비를 끝냅니다</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 마무리 CTA -->
+<section class="closing">
+  <div class="wrap reveal">
+    <div class="line1">창업은 한 번이지만</div>
+    <div class="line2">주방은 매일 사용합니다.</div>
+    <p style="color:#C9D4DA; font-size:14.5px; font-weight:500; margin-bottom:8px;">기기 구매 전, 먼저 상담 받아보세요.</p>
+    <a href="tel:031-841-8259" class="cta-btn">☎ 무료 창업상담 <span class="num">031-841-8259</span></a>
+    <div class="addr">
+      <b>양주종합주방</b>
+      경기도 양주시 부흥로 1890
+    </div>
+  </div>
+</section>
+
+<!-- sticky bottom bar -->
+<div class="sticky-bar">
+  <div class="wrap">
+    <a href="tel:031-841-8259" class="cta-btn">☎ 무료 창업상담 바로가기</a>
+  </div>
+</div>
+
+<script>
+  // scroll reveal
+  const items = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  items.forEach(i=>obs.observe(i));
+</script>
+
+</body>
+</html>
